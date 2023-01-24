@@ -13,3 +13,8 @@ export const Desktop: Story = () => (
 export const Mobile: Story = () => (
   <MediaMatch lessThan="medium">Only on Mobile</MediaMatch>
 )
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile1'
+  }
+}
