@@ -1,5 +1,4 @@
 import Button from 'components/Button'
-import Image from 'next/image'
 import { AddShoppingCart, FavoriteBorder } from 'styled-icons/material-outlined'
 import * as S from './styles'
 
@@ -13,7 +12,7 @@ export type GameCardProps = {
 const GameCard = ({ title, developer, img, price }: GameCardProps) => (
   <S.Wrapper>
     <S.ImageBox>
-      <Image src={img} alt={title} />
+      <img src={img} alt={title} />
     </S.ImageBox>
 
     <S.Info>
