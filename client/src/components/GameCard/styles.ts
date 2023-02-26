@@ -4,6 +4,8 @@ export const Wrapper = styled.article``
 
 export const ImageBox = styled.div``
 
+export const Content = styled.div``
+
 export const Info = styled.div``
 
 export const Title = styled.h3``
