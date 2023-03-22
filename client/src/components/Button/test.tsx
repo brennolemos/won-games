@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react'
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
 import { renderWithTheme } from 'utils/tests/helpers'
+import theme from 'styles/theme'
 
 import Button from '.'
 
@@ -49,6 +50,19 @@ describe('<Button />', () => {
 
     expect(screen.getByText(/Buy now/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render a minimal version', () => {
+    renderWithTheme(
+      <Button icon={<AddShoppingCart data-testid="icon" />} minimal>
+        Buy now
+      </Button>
+    )
+
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyle({
+      background: 'none',
+      color: theme.colors.primary
+    })
   })
 
   it('should render Button as a link', () => {
